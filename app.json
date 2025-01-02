@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/functions/functions",
+    "pages/ui/ui"
+
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#f7f7f7"
+  },
+  "tabBar": {
+    "color": "#5F636E",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "组件",
+        "iconPath": "/static/images/tabs/component.png",
+        "selectedIconPath": "/static/images/tabs/component_active.png"
+      },
+      {
+        "pagePath": "pages/functions/functions",
+        "text": "功能",
+        "iconPath": "/static/images/tabs/function.png",
+        "selectedIconPath": "/static/images/tabs/function_active.png"
+      },
+      {
+        "pagePath": "pages/ui/ui",
+        "text": "UI",
+        "iconPath": "/static/images/tabs/color.png",
+        "selectedIconPath": "/static/images/tabs/color_active.png"
+      }
+    ]
+  },
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

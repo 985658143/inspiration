@@ -1,0 +1,44 @@
+/**index.less**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    margin: 0rpx auto;
+    height: 300rpx;
+    .icon_img {
+      position: relative;
+      width: 80rpx;
+      height: 80rpx;
+      margin-bottom: 30rpx;
+    }
+    .intro_text {
+      position: relative;
+      width: 90%;
+      margin: 0 auto;
+      font-size: 22rpx;
+    }
+  }
+  .list {
+    position: relative;
+    width: 90%;
+    margin: 0rpx auto;
+  }
+}
+

@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="intro">
+      <image class="icon_img" src="/static//images/tabs/color.png" mode="widthFix" ></image>
+      <view class="intro_text">本页面展示了我所创作和欣赏的UI界面，这些界面的设计理念和配色方案旨在激发创意，为您的项目提供丰富的视觉参考。</view>
+    </view>
+    <view class="list">
+      <view class="list_item">
+        <van-cell title="vip中心" size="large" link-type="navigateTo"
+        url="/pages/dashboard/index" is-link/>
+        <van-cell title="朋友圈列表" size="large" is-link/>
+        <van-cell title="多宫格图片" size="large" is-link/>
+        <van-cell title="个人资料" size="large" is-link />
+        <van-cell title="商品详情" size="large" is-link />
+      </view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,43 @@
+/**index.less**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.container .intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 90%;
+  margin: 0rpx auto;
+  height: 300rpx;
+}
+.container .intro .icon_img {
+  position: relative;
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 30rpx;
+}
+.container .intro .intro_text {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 22rpx;
+}
+.container .list {
+  position: relative;
+  width: 90%;
+  margin: 0rpx auto;
+}

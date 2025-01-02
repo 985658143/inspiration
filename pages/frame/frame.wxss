@@ -1,0 +1,124 @@
+page {
+  box-sizing: border-box;
+  background-color: #F3F3F3;
+}
+.device_container {
+  /* height: 100%; */
+  display: block;
+  padding: 0 30rpx;
+  margin-top: 8rpx;
+  height: 100vh;
+}
+.device_container .search_container {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  /* width: 690rpx; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-center;
+  margin-top: 20rpx;
+  border: 3rpx solid #F0F2F5;
+  padding: 10px;
+}
+.device_container .search_container .search_bar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.device_container .search_container .search_bar .t1 {
+  font-size: 20px;
+  margin-bottom: 10rpx;
+}
+.device_container .search_container .search_bar .t2 {
+  font-size: 16px;
+  color: #848484;
+}
+.device_container .search_container .device_list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  height: 550rpx;
+}
+.device_container .search_container .device_list .device_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #848484;
+  height: 70rpx;
+  padding: 5px;
+}
+.device_container .search_container .device_list .device_item .connect_status {
+  color: #848484;
+}
+.device_container .search_container .device_list .device_item .connected {
+  color: blue;
+}
+.device_container .search_container .device_list .device_item_hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.device_container .search_container .empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 450rpx;
+  font-size: 16px;
+  color: #848484;
+}
+.device_container .receiveInfo {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  display: flex;
+  margin-top: 20rpx;
+  border: 3rpx solid #F0F2F5;
+  padding: 10px;
+  white-space: wrap;
+  word-break: break-all;
+}
+.device_container .btn_control {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  display: flex;
+  margin-top: 20rpx;
+  border: 3rpx solid #F0F2F5;
+  padding: 10px;
+}
+.device_container .btn_control .instruction_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #d1cece;
+}
+.btn_wrap {
+  display: flex;
+  height: 100rpx;
+}
+.btn_wrap .confirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100rpx;
+  color: #009944;
+}
+.btn_wrap .cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100rpx;
+  color: #848484;
+}
