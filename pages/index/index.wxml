@@ -8,9 +8,8 @@
     <view class="list">
       <view class="list_item">
         <van-cell title="地址管理组件" size="large" link-type="navigateTo"
-        url="/pages/dashboard/index" is-link/>
+        url="/pages/index/address/address" is-link/>
         <van-cell title="地图门店组件" size="large" is-link/>
-        <van-cell title="瀑布流照片墙组件" size="large" is-link/>
         <van-cell title="富文本输入组件" size="large" is-link />
       </view>
     </view>

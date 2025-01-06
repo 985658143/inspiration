@@ -4,7 +4,7 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1723532213423, function(require, module, exports) {
+__DEFINE__(1735811749066, function(require, module, exports) {
 /*!
  * body-parser
  * Copyright(c) 2014-2015 Douglas Christopher Wilson
@@ -162,8 +162,8 @@ function loadParser (parserName) {
   return (parsers[parserName] = parser)
 }
 
-}, function(modId) {var map = {"./lib/types/json":1723532213424,"./lib/types/raw":1723532213426,"./lib/types/text":1723532213427,"./lib/types/urlencoded":1723532213428}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1723532213424, function(require, module, exports) {
+}, function(modId) {var map = {"./lib/types/json":1735811749067,"./lib/types/raw":1735811749069,"./lib/types/text":1735811749070,"./lib/types/urlencoded":1735811749071}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1735811749067, function(require, module, exports) {
 /*!
  * body-parser
  * Copyright(c) 2014 Jonathan Ong
@@ -412,8 +412,8 @@ function typeChecker (type) {
   }
 }
 
-}, function(modId) { var map = {"../read":1723532213425}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1723532213425, function(require, module, exports) {
+}, function(modId) { var map = {"../read":1735811749068}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1735811749068, function(require, module, exports) {
 /*!
  * body-parser
  * Copyright(c) 2014-2015 Douglas Christopher Wilson
@@ -621,7 +621,7 @@ function dump (req, callback) {
 }
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1723532213426, function(require, module, exports) {
+__DEFINE__(1735811749069, function(require, module, exports) {
 /*!
  * body-parser
  * Copyright(c) 2014-2015 Douglas Christopher Wilson
@@ -724,8 +724,8 @@ function typeChecker (type) {
   }
 }
 
-}, function(modId) { var map = {"../read":1723532213425}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1723532213427, function(require, module, exports) {
+}, function(modId) { var map = {"../read":1735811749068}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1735811749070, function(require, module, exports) {
 /*!
  * body-parser
  * Copyright(c) 2014-2015 Douglas Christopher Wilson
@@ -848,8 +848,8 @@ function typeChecker (type) {
   }
 }
 
-}, function(modId) { var map = {"../read":1723532213425}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1723532213428, function(require, module, exports) {
+}, function(modId) { var map = {"../read":1735811749068}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1735811749071, function(require, module, exports) {
 /*!
  * body-parser
  * Copyright(c) 2014 Jonathan Ong
@@ -1135,8 +1135,8 @@ function typeChecker (type) {
   }
 }
 
-}, function(modId) { var map = {"../read":1723532213425}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1723532213423);
+}, function(modId) { var map = {"../read":1735811749068}; return __REQUIRE__(map[modId], modId); })
+return __REQUIRE__(1735811749066);
 })()
 //miniprogram-npm-outsideDeps=["depd","bytes","content-type","http-errors","debug","type-is","destroy","raw-body","iconv-lite","on-finished","unpipe","zlib","qs","querystring"]
 //# sourceMappingURL=index.js.map

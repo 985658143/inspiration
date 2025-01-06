@@ -1,0 +1,108 @@
+.main {
+  height: auto;
+}
+.main .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: #ffffff;
+}
+.main .container .container_wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+.main .container .container_wrapper .box {
+  position: relative;
+  column-count: 2;
+  column-gap: 2rpx;
+  padding: 15rpx 0 80rpx 8rpx;
+  z-index: 1;
+}
+.main .container .container_wrapper .box .item {
+  position: relative;
+  width: 360rpx;
+  overflow-y: scroll;
+  border-radius: 15rpx;
+  -moz-border-radius: 15rpx;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+}
+.main .container .container_wrapper .box .item image {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  border-radius: 15rpx;
+  -moz-border-radius: 15rpx;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+}
+.main .container .container_wrapper .box .item .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+.main .container .container_wrapper .box .first {
+  position: relative;
+  width: 360rpx;
+  height: 360rpx;
+  overflow-y: scroll;
+  border-radius: 15rpx;
+  -moz-border-radius: 15rpx;
+  -webkit-overflow-scrolling: touch;
+  background: #f7f7f7;
+  margin: 0 15rpx 15rpx 0;
+}
+.main .container .container_wrapper .box .first .add {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34rpx;
+  height: 34rpx;
+  margin: -17rpx 0 0 -17rpx;
+}
+.main .container .container_wrapper .btn_box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150rpx;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin-top: 15rpx;
+  z-index: 9;
+}
+.main .container .container_wrapper .btn_box .delete_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+.main .container .container_wrapper .btn_box .delete_btn image {
+  padding-right: 10rpx;
+}
+.main .container .container_wrapper .btn_box .cancel,
+.main .container .container_wrapper .btn_box .confirm {
+  width: 50%;
+  text-align: center;
+  box-sizing: border-box;
+}
+.main .container .container_wrapper .underline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 0 30rpx 0;
+  color: #9e9e9e;
+  font-size: 20rpx;
+  letter-spacing: 3rpx;
+  font-weight: 500;
+}

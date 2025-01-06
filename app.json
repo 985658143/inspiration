@@ -1,9 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/address/address",
+    "pages/index/address/edit/edit",
     "pages/functions/functions",
-    "pages/ui/ui"
-
+    "pages/frame/frame",
+    "pages/ui/ui",
+    "pages/ui/waterfallPhoto/waterfallPhoto"
   ],
   "window": {
     "navigationBarTextStyle": "black",

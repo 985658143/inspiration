@@ -11,6 +11,8 @@
         url="/pages/dashboard/index" is-link/>
         <van-cell title="朋友圈列表" size="large" is-link/>
         <van-cell title="多宫格图片" size="large" is-link/>
+        <van-cell title="瀑布流照片墙组件" size="large" link-type="navigateTo"
+        url="/pages/ui/waterfallPhoto/waterfallPhoto" is-link/>
         <van-cell title="个人资料" size="large" is-link />
         <van-cell title="商品详情" size="large" is-link />
       </view>

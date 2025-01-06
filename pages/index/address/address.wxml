@@ -1,0 +1,59 @@
+<!-- 收件信息页 -->
+<view class="container">
+  <l-cover isCover="{{ isCover }}"></l-cover>
+  <!-- <mp-dialog 
+    show="{{ dialogShow }}"
+    bindbuttontap="tapDialogButton"
+    buttons="{{ buttons }}">
+        <view>
+            <view class="calcelTitle">
+              确定要删除地址？
+            </view>
+        </view>
+  </mp-dialog> -->
+  <van-dialog message="确定要删除地址？" show="{{ dialogShow }}" 
+   bind:confirm="tapDialogButton" showCancelButton confirm-button-color="#AAAAAA"
+  cancel-button-color="#009944" round />
+  <view class="main">
+    <block wx:if="{{address_list[0]}}">
+      <view class="top">
+        <view class="controller" bindtap="controlEdit" >{{ currentIndex == false ? '管理' : '完成'}}</view>
+      </view>
+      <view class="content">
+        <block wx:for="{{address_list}}" wx:key="index">
+          <view class="item" bindtap="onSelect" data-item="{{item}}">
+            <view class="item_wrap">
+              <view class="info">
+                <view class="detail">   
+                  <view class="user">{{item.receive_contact}}</view>
+                  <view class="phoneNumber">{{item.receive_mobile}}</view>
+                  <view class="status" wx:if="{{item.is_default == 1}}">默认</view>
+                  <view class="shop_status" wx:if="{{item.shop_id > 0}}">门店</view>
+                </view>
+                <view class="address">{{item.province_name}} {{item.city_name}} {{item.county_name}} {{item.receive_address}}</view>
+              </view>
+              <view class="edit_box {{!editShow ? 'floatRight' : ''}}">
+                <van-checkbox
+                  wx:if="{{!select && !editShow}}"
+                  icon-size="25px"
+                   value="{{ addressId == item.id }}"
+                  checked-color="#009944"
+                ></van-checkbox>
+                <van-icon wx:if="{{editShow}}" name="edit" data-id="{{item.id}}" size="25" catchtap="editClick"/>
+                <van-icon wx:if="{{editShow}}" name="cross" data-sid="{{item.shop_id}}" data-id="{{item.id}}" size="25" catchtap="deleteClick"/>
+                
+              </view>
+            </view>
+          </view>
+        </block>
+        
+      </view>
+    </block>
+    <view class="empty" wx:else>
+      <view class="text">您还没有收件地址，快添加一个吧~</view>
+    </view>
+  </view>
+  <navigator class="add_btn" url="/pages/index/address/edit/edit">
+    <view class="add_btn">添加收件地址</view>
+  </navigator>
+</view>

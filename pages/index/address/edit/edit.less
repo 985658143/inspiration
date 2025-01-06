@@ -1,0 +1,90 @@
+.container {
+  // background: #f7f7f7;
+  height: 100vh;
+  background: #ffffff;
+  .main {
+    width: 100%;
+    height: 100%;
+    .main_wrap {
+      display: flex;
+      flex-direction: column;
+      width: 660rpx;
+      margin: 0 auto;
+      .input_box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 30rpx;
+        .prefix {
+          font-size: 30rpx;
+          color: #333333;
+          margin-top: 15rpx;
+        }
+        .input_wrap {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 484rpx;
+          height: 80rpx;
+          border-radius: 20rpx;
+          background: #f8f8f8;
+          font-size: 28rpx;
+          input {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 0 30rpx;
+            word-break: break-all;
+            white-space: wrap;
+          }
+          textarea {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 25rpx 30rpx;
+            word-break: break-all;
+            white-space: wrap;
+          }
+          .input_ph {
+            font-size: 28rpx;
+            color: #6c6c6c;
+          }
+        }
+        .extend {
+          height: 160rpx;
+          align-items: flex-start;
+        }
+        
+      }
+      .default_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 30rpx;
+        .prefix {
+          font-size: 30rpx;
+          color: #333333;
+        }
+      }
+      .big {
+        align-items: flex-start;
+      }
+      
+      
+    }
+  }
+  .add_btn {
+    margin-top: 250rpx;
+    background: #009944;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 586rpx;
+    height: 74rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    border-radius: 40rpx;
+  }
+}

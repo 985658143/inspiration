@@ -1,0 +1,43 @@
+<!-- 地址修改页 -->
+<l-cover isCover="{{ isCover }}"></l-cover>
+<view class="container">
+  <view class="main">
+    <form  bindsubmit="formSubmit">
+      <view class="main_wrap" >
+        <view class="input_box">
+            <view class="prefix">收件人</view>
+            <view class="input_wrap">
+              <input type="text" id="name" disabled="{{ addressInfo.shop_id> 0}}" name="receive_contact" bindinput="{{ receive_contact }}" placeholder="名字" placeholder-class="input_ph" value="{{addressInfo.receive_contact}}"/>
+            </view>
+        </view>
+        <view class="input_box">
+            <view class="prefix">手机号码</view>
+            <view class="input_wrap">
+              <input type="text" id="phone" disabled="{{ addressInfo.shop_id> 0}}" name="receive_mobile" bindinput="{{ receive_mobile }}" placeholder="手机号" placeholder-class="input_ph" value="{{addressInfo.receive_mobile}}"/>
+            </view>
+        </view>
+        <view class="input_box">
+            <view class="prefix">所在地区</view>
+            <view class="input_wrap">
+              <input wx:if="{{ addressInfo.shop_id > 0}}" type="text" id="province" disabled  name="province" bindinput="{{ province }}" placeholder="省、市、区" placeholder-class="input_ph" value="{{addressInfo.province_name ? addressInfo.province_name + addressInfo.city_name + addressInfo.county_name : ''}}" disabled/>
+              <input wx:else  type="text" id="province" name="province" bindinput="{{ province }}" bindtap="openArea" placeholder="省、市、区" placeholder-class="input_ph" value="{{addressInfo.province_name ? addressInfo.province_name + addressInfo.city_name + addressInfo.county_name : ''}}" disabled/>
+            </view>
+        </view>
+        <view class="input_box big">
+            <view class="prefix">详细地址</view>
+            <view class="input_wrap extend">
+              <textarea type="text" placeholder="小区楼梯/乡村名称" disabled="{{ addressInfo.shop_id> 0}}" placeholder-class="input_ph" id="address" name="receive_address" bindinput="{{ receive_address }}" value="{{addressInfo.receive_address}}"></textarea>
+            </view>
+        </view>
+        <view class="default_box">
+          <view class="prefix">设为默认收货地址</view>
+          <van-switch style="display:flex;" checked="{{ checked }}" bind:change="onChange" size="24px" active-color="#009944"/>
+        </view>
+        <button class="add_btn" formType="submit">保存</button>
+      </view>
+    </form>
+  </view>
+  <van-popup show="{{ showArea }}" bind:close="closeArea" position="bottom" round >
+    <van-area area-list="{{ areaList }}" bind:confirm="areaClick"/>
+  </van-popup>
+</view> 

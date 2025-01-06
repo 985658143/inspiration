@@ -1,0 +1,156 @@
+.container {
+  // background: #f7f7f7;
+  height: 100vh;
+  background: #f8f8f8;
+  .main {
+    width: 100%;
+    .top {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 90%;
+      height: 60rpx;
+      margin: 0 auto;
+      .controller {
+        font-size: 30rpx;
+        color: #009944;
+      }
+    }
+    .content {
+      width: 100%;
+      height: 100%;
+      .item {
+        width: 100%;
+        height: 185rpx;
+        background: #ffffff;
+        border: 1rpx solid #d8d8d8;
+        .item_wrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 656rpx;
+          height: 100%;
+          margin: 0 auto;
+          .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            font-size: 24rpx;
+            max-width: 500rpx;
+            height: 100%;
+            box-sizing: border-box;
+            
+            .detail {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              margin-bottom: 15rpx;
+              .user {
+                font-size: 30rpx;
+                color: #333333;
+                margin-right: 15rpx;
+                max-width: 250rpx;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              .phoneNumber {
+                color: #6c6c6c;
+                margin-right: 15rpx;
+              }
+              .status {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 70rpx;
+                height: 30rpx;
+                border-radius: 15rpx;
+                background: #ce80ff;
+                color: #ffffff;
+                font-size: 24rpx;
+              }
+              .shop_status {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                width: auto;
+                height: 36rpx;
+                border-radius: 16rpx;
+                background: #e6a23c;
+                color: #ffffff;
+                font-size: 20rpx;
+                font-weight: 400;
+                padding: 0 15rpx;
+              }
+            }
+            .address {
+              color: #333333;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              word-break: break-all;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+            }
+          }
+          .edit_box {
+            width: 120rpx;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .edit {
+              width: 38rpx;
+              height: 40rpx;
+            }
+            .delete {
+              width: 33rpx;
+              height: 38rpx;
+            }
+          }
+          .floatRight {
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+    .empty {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      // height: 100vh;
+      padding: 150rpx 0;
+      // background: #f8f8f8;
+      .icon {
+        width: 117rpx;
+        height: 111rpx;
+      }
+      .text {
+        font-size: 26rpx;
+        color: #999999;
+        margin-top: 15rpx;
+      }
+    }
+  }
+  .add_btn {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    margin: -37rpx 0 0 -293rpx;
+    background: #009944;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 586rpx;
+    height: 74rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    border-radius: 40rpx;
+  }
+}

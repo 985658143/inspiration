@@ -1,0 +1,29 @@
+<view class="main">
+  <view class="container">
+    <view class="container_wrapper">
+      <view class="btn_box">
+        <view class="delete_btn" bindtap="changeStatus" wx:if="{{ status }}">
+          <image src="/static/images/common/close.png" mode="widthFix" style="width: 28rpx;height: 29rpx;"></image>删除
+        </view>
+        <view class="cancel" wx:if="{{ !status }}" bindtap="changeStatus">取消</view>
+        <view class="confirm" wx:if="{{ !status }}" bindtap="deleteImg">确定</view>
+      </view>
+      <view class="box">
+        <view class="first" bindtap="addImg">
+          <image class="add" src="/static/images/common/add.png" mode="widthFix" lazy-load="true"></image>
+        </view>
+        <checkbox-group bindchange="checkboxChange">
+          <block wx:for="{{ arrList }}" wx:key="index">
+            <view class="item">
+              <image src="{{ item.img_url }}" mode="widthFix" lazy-load="true" bindtap="previewImg" data-index="{{ index }}"></image>
+              <checkbox class="cover" wx:if="{{ !status }}" value="{{ item.id }}"></checkbox>
+            </view>
+          </block>
+        </checkbox-group>
+      </view>
+      
+      <view class="underline"><text>-我也是有底线的-</text></view>
+    </view>
+  </view>
+</view>
+<l-cover isCover="{{ isCover }}"></l-cover>

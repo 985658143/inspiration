@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "l-cover": "/components/l-cover/l-cover",
+    "van-checkbox": "/miniprogram_npm/@vant/weapp/checkbox/index",
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index"
+  },
+  "navigationBarTitleText": "收件地址"
+}

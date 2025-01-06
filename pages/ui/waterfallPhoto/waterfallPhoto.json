@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-cover": "/components/l-cover/l-cover"
+  },
+  "navigationBarTitleText": "瀑布流照片墙",
+    "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "light"
+}
