@@ -1,66 +1,64 @@
-// pages/ui/ui.js
+//Page Object
+const app = getApp()  
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    menuList: [
+      {
+        id: 1,
+        url: "",
+        title: "vip中心",
+        open: false,
+      },
+      {
+        id: 2,
+        url: "",
+        title: "朋友圈列表",
+        open: false,
+      },
+      {
+        id: 3,
+        url: "",
+        title: "多宫格图片",
+        open: false,
+      },
+      {
+        id: 4,
+        url: "/pages/ui/waterfallPhoto/waterfallPhoto",
+        title: "瀑布流照片墙组件",
+        open: false,
+      },
+      {
+        id: 5,
+        url: "",
+        title: "个人资料",
+        open: false,
+      },
+      {
+        id: 6,
+        url: "",
+        title: "商品详情",
+        open: false,
+      },
+    ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  //options(Object)
+  onLoad: function(options){
+    
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onReady: function(){
+    
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  onShow: function(){
+    
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  // 菜单跳转
+  routerTo(e) {
+    const {id} = e.currentTarget.dataset;
+    console.log("routerTo", id)
+    if(this.data.menuList[id].url) {
+      wx.navigateTo({
+        url: this.data.menuList[id].url
+      })
+    }
   }
-})
+});

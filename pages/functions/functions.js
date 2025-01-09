@@ -1,7 +1,21 @@
 //Page Object
+const app = getApp()  
 Page({
   data: {
-    
+    menuList: [
+      {
+        id: 1,
+        url: "/pages/frame/frame",
+        title: "蓝牙",
+        open: false,
+      },
+      {
+        id: 2,
+        url: "/pages/index/map/map",
+        title: "gsplat模型预览",
+        open: false,
+      },
+    ]
   },
   //options(Object)
   onLoad: function(options){
@@ -13,26 +27,12 @@ Page({
   onShow: function(){
     
   },
-  onHide: function(){
-
-  },
-  onUnload: function(){
-
-  },
-  onPullDownRefresh: function(){
-
-  },
-  onReachBottom: function(){
-
-  },
-  onShareAppMessage: function(){
-
-  },
-  onPageScroll: function(){
-
-  },
-  //item(index,pagePath,text)
-  onTabItemTap:function(item){
-
+  // 菜单跳转
+  routerTo(e) {
+    const {id} = e.currentTarget.dataset;
+    console.log("routerTo", id)
+      wx.navigateTo({
+        url: this.data.menuList[id].url
+      })
   }
 });

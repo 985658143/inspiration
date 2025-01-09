@@ -3,15 +3,11 @@
   <view class="container">
     <view class="intro">
       <image class="icon_img" src="/static//images/tabs/function.png" mode="widthFix" ></image>
-      <view class="intro_text">本页面汇聚了我设计和实现的多种创新功能，助您开发出更具吸引力与竞争力的应用，让用户体验更上一层楼。</view>
+      <view class="intro_text">本页面汇聚了多种创新功能，更具吸引力与竞争力的应用，让用户体验更上一层楼。</view>
     </view>
     <view class="list">
       <view class="list_item">
-        <van-cell title="gsplat模型预览" size="large" link-type="navigateTo"
-        url="/pages/dashboard/index" is-link/>
-        <navigator class="" target="" url="/pages/frame/frame" hover-class="navigator-hover" open-type="navigate">
-          <van-cell title="蓝牙" size="large" is-link/>
-        </navigator>
+        <van-cell wx:for="{{menuList}}" wx:key="index" data-id="{{index}}" title="{{item.title}}" size="large" bindtap="routerTo" is-link/>
       </view>
     </view>
   </view>
