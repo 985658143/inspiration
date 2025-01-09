@@ -2,8 +2,8 @@
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
     <view class="intro">
-      <image class="icon_img" src="/static//images/tabs/function.png" mode="widthFix" ></image>
-      <view class="intro_text">本页面汇聚了多种创新功能，更具吸引力与竞争力的应用，让用户体验更上一层楼。</view>
+      <image class="icon_img" src="/static/images/tabs/function.png" mode="widthFix" ></image>
+      <view wx:if="{{menuList.length > 0}}" class="intro_text">本页面汇聚了多种创新功能，更具吸引力与竞争力的应用，让用户体验更上一层楼。</view>
     </view>
     <view class="list">
       <view class="list_item">

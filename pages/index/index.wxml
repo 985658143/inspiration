@@ -3,7 +3,7 @@
   <view class="container">
     <view class="intro">
       <image class="icon_img" src="/static//images/tabs/component.png" mode="widthFix" ></image>
-      <view class="intro_text">以下展示的是精心挑选的高质量组件，每个组件都经过精心打磨，旨在提升项目的开发效率与用户体验。</view>
+      <view wx:if="{{menuList.length > 0}}" class="intro_text">以下展示的是精心挑选的高质量组件，每个组件都经过精心打磨，旨在提升项目的开发效率与用户体验。</view>
     </view>
     <view class="list">
       <view class="list_item">

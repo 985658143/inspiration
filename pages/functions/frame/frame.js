@@ -1,6 +1,6 @@
 //Page Object
-import {blueApi, SET_WIFISSID, SET_WIFIPASSWORD} from '../../utils/blueApi.js'
-import { isHexadecimal, strToUtf8Bytes, ab2hex, inArray } from '../../utils/util.js'
+import {blueApi, SET_WIFISSID, SET_WIFIPASSWORD} from '../../../utils/blueApi.js'
+import { isHexadecimal, strToUtf8Bytes, ab2hex, inArray } from '../../../utils/util.js'
 const app = getApp()
 
 

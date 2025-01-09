@@ -6,7 +6,7 @@
     "pages/index/map/map",
     "pages/index/richText/richText",
     "pages/functions/functions",
-    "pages/frame/frame",
+    "pages/functions/frame/frame",
     "pages/ui/ui",
     "pages/ui/waterfallPhoto/waterfallPhoto"
   ],

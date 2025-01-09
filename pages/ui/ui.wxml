@@ -3,7 +3,7 @@
   <view class="container">
     <view class="intro">
       <image class="icon_img" src="/static//images/tabs/color.png" mode="widthFix" ></image>
-      <view class="intro_text">本页面展示了我所创作和欣赏的UI界面，这些界面的设计理念和配色方案旨在激发创意，为您的项目提供丰富的视觉参考。</view>
+      <view wx:if="{{menuList.length > 0}}" class="intro_text">本页面展示了我所创作和欣赏的UI界面，这些界面的设计理念和配色方案旨在激发创意，为您的项目提供丰富的视觉参考。</view>
     </view>
     <view class="list">
       <view class="list_item">
