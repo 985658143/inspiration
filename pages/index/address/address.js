@@ -128,18 +128,18 @@ Page({
       return false
     }
     const data = e.currentTarget.dataset.item;
-    const prevPage = getCurrentPages()[getCurrentPages().length - 2];
-    prevPage.setData({
-      id: data.id,
-      receive_contact: data.receive_contact,
-      receive_mobile: data.receive_mobile,
-      receive_address: data.receive_address,
-      city_name: data.city_name,
-      county_name: data.county_name,
-      province_name: data.province_name,
-      shop_id: data.shop_id,
-    });
-    wx.navigateBack()
+    // const prevPage = getCurrentPages()[getCurrentPages().length - 2];
+    // prevPage.setData({
+    //   id: data.id,
+    //   receive_contact: data.receive_contact,
+    //   receive_mobile: data.receive_mobile,
+    //   receive_address: data.receive_address,
+    //   city_name: data.city_name,
+    //   county_name: data.county_name,
+    //   province_name: data.province_name,
+    //   shop_id: data.shop_id,
+    // });
+    // wx.navigateBack()
   },
   onLoad:function(options){
     // this.setData({

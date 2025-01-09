@@ -9,8 +9,10 @@
       <view class="list_item">
         <van-cell title="地址管理组件" size="large" link-type="navigateTo"
         url="/pages/index/address/address" is-link/>
-        <van-cell title="地图门店组件" size="large" is-link/>
-        <van-cell title="富文本输入组件" size="large" is-link />
+        <van-cell title="地图门店组件" link-type="navigateTo"
+        url="/pages/index/map/map" size="large" is-link/>
+        <van-cell title="富文本输入组件" link-type="navigateTo"
+        url="/pages/index/richText/richText" size="large" is-link />
       </view>
     </view>
   </view>

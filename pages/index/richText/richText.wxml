@@ -1,0 +1,62 @@
+<view class="container">
+  <l-cover isCover="{{ isCover }}"></l-cover>
+  <view class="index">
+    <view class="main" style="background: '#f8f8f8'">
+      <view class="main_wrapper">
+        <view class="editor">
+          <view class="title_box">
+            <input class="title_input" type="text" placeholder="标题" placeholder-class="title_ph" bindinput="bindTitle"/>
+          </view>
+          <view class="content" style="height: {{isUp ? 15 : 50}}vh">
+            <editor id="content" class="ct_input" name="content" placeholder="写点什么..." placeholder-class="ct_ph" bindready="onEditorReady" show-img-toolbar="true"
+            bindinput="bindContent" bindstatuschange="onStatusChange" bindblur="onBlur" onfocus="onFocus">
+            </editor>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="edit_box" hidden="{{isChoose}}" catchtouchend="format" style="bottom: {{isIOS ? keyboardHeight  : 0}}px;">
+      <ul class="top" >
+        <li><image class="btn emoji_btn" src="/static/images/richText/emoji.png" mode="widthFix" bindtap="emojiClick"></image>
+        </li>
+        <li><image class="btn insert_btn" src="/static/images/richText/image.png" mode="widthFix" catchtouchend="insertImage"></image></li>
+        <block wx:for="{{fontList}}" wx:key="id">
+          <li >
+            <image class="btn" bindtap="funcClick" data-name="{{item.func}}" data-id="{{item.id}}"  src="/static/images/richText/{{item.func}}{{ item.status ? '_act' : '' }}.png" mode="widthFix" >
+            </image>
+          </li>
+        </block>
+        <li bindtap="sizeClick"><image class="btn" src="/static/images/richText/size.png" mode="widthFix"></image></li>
+        <li bindtap="colorClick"><image class="btn" src="/static/images/richText/color.png" mode="widthFix" ></image></li>
+        <view class="pop_over" hidden="{{!popShow}}" style="background-image: url(/static/images/richText/popover.png); background-size: 100% 100%;" mode="widthFix">
+          <ul class="wrap">
+             <block wx:for="{{colorList}}" wx:key="id">
+                <li style="background: {{item.color}}" data-name="color" data-value="{{item.color}}" catchtap="colorClose"></li>
+             </block>
+          </ul> 
+        </view> 
+        <view class="pop_over2" hidden="{{!popShow2}}" style="background-image: url(/static/images/richText/popover2.png); background-size: 100% 100%;" mode="widthFix">
+          <ul class="wrap">
+             <block wx:for="{{sizeList}}" wx:key="index">
+                <li class="{{ currentNode == index ? 'selected' : '' }}" data-name="fontSize" data-value="{{item.value}}" bindtap="sizeChoose" data-index="{{index}}">{{item.font}}
+                </li>
+             </block>
+          </ul>
+        </view> 
+      </ul>
+      <view class="emoji_box {{isEmoji ? 'extension' : ''}}">
+        <view class="emoji_wrap">
+          <block wx:for="{{emojiList}}" wx:key="index">
+            <view class="emoji_item" bindtap="emojiChoose" data-url="{{item.url}}">
+              <image class="emoji" src="{{item.url}}" mode="widthFix"></image>
+            </view>
+          </block>
+        </view>
+      </view>
+      
+      <view class="add_box">
+        <view class="add_btn" bindtap="postClick">发送</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,284 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+}
+.container .index {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+}
+.container .index .main {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-height: 80vh;
+  background: #f8f8f8;
+  border-top-left-radius: 35rpx;
+  border-top-right-radius: 35rpx;
+  box-shadow: 0rpx 0rpx 25rpx -10rpx;
+  z-index: 2;
+}
+.container .index .main .game_choose {
+  position: relative;
+  margin: 0 auto;
+  padding: 40rpx 0 100rpx 0;
+}
+.container .index .main .game_choose .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  color: #333333;
+}
+.container .index .main .game_choose .first {
+  border-bottom: 1rpx solid #d8d8d8;
+}
+.container .index .main .game_choose .box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.container .index .main .game_choose .box .game_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 658rpx;
+  margin: 30rpx auto 10rpx auto;
+  box-sizing: border-box;
+}
+.container .index .main .game_choose .box .game_wrap .label {
+  font-size: 28rpx;
+  color: #141414;
+}
+.container .index .main .game_choose .box .game_wrap .game_list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 30rpx 0;
+}
+.container .index .main .game_choose .box .game_wrap .game_list .game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 125rpx;
+  height: 170rpx;
+  margin-bottom: 30rpx;
+  margin-right: 40rpx;
+}
+.container .index .main .game_choose .box .game_wrap .game_list .game .game_avatar {
+  width: 121rpx;
+  height: 121rpx;
+}
+.container .index .main .game_choose .box .game_wrap .game_list .game .game_name {
+  font-size: 24rpx;
+  color: #242424;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.container .index .main .game_choose .cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 170rpx;
+  margin-top: 300rpx;
+}
+.container .index .main .game_choose .cancel .cancel_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 586rpx;
+  margin: 0 auto;
+  height: 74rpx;
+  background: #3495ff;
+  border-radius: 30rpx;
+  color: #ffffff;
+  letter-spacing: 2rpx;
+}
+.container .index .main .main_wrapper {
+  position: relative;
+  width: 658rpx;
+  max-height: 60vh;
+  margin: 0 auto;
+  padding: 40rpx 0;
+}
+.container .index .main .main_wrapper .editor {
+  position: relative;
+  width: 100%;
+  max-height: 60vh;
+}
+.container .index .main .main_wrapper .editor .title_box {
+  padding: 15rpx 0;
+  height: 55rpx;
+  border-bottom: solid 2rpx #cfcfcf;
+  margin-bottom: 20rpx;
+}
+.container .index .main .main_wrapper .editor .title_box .title_input {
+  font-size: 36rpx;
+  line-height: 40rpx;
+  font-weight: bolder;
+}
+.container .index .main .main_wrapper .editor .title_box .title_ph {
+  font-size: 36rpx;
+  color: #939393;
+}
+.container .index .main .main_wrapper .editor .content {
+  height: 50vh;
+  overflow: scroll;
+}
+.container .index .main .main_wrapper .editor .content .ct_input {
+  width: 658rpx;
+  height: 100%;
+}
+.container .index .main .main_wrapper .editor .content .ct_ph {
+  font-size: 24rpx;
+  color: #bcbcbc;
+}
+.container .index .edit_box {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0rpx 0rpx 20rpx -15rpx;
+  z-index: 3;
+}
+.container .index .edit_box .top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 658rpx;
+  margin: 0 auto;
+  height: 100rpx;
+}
+.container .index .edit_box .top li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13%;
+  height: 100%;
+}
+.container .index .edit_box .top li .btn {
+  width: 43rpx;
+  height: 38rpx;
+}
+.container .index .edit_box .top .pop_over {
+  position: absolute;
+  top: -70rpx;
+  left: 90rpx;
+  width: 596rpx;
+  height: 92rpx;
+  transition: all .5s;
+}
+.container .index .edit_box .top .pop_over .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 550rpx;
+  height: 85%;
+  margin: 0 auto;
+}
+.container .index .edit_box .top .pop_over .wrap li {
+  border-radius: 14rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+.container .index .edit_box .top .pop_over .wrap .font {
+  width: 40rpx;
+  height: 40rpx;
+}
+.container .index .edit_box .top .pop_over2 {
+  position: absolute;
+  top: -70rpx;
+  right: 125rpx;
+  width: 216rpx;
+  height: 92rpx;
+  transition: all .5s;
+}
+.container .index .edit_box .top .pop_over2 .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 210rpx;
+  height: 80%;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.container .index .edit_box .top .pop_over2 .wrap li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(33.33333333%);
+  height: 100%;
+  color: #3e3a39;
+}
+.container .index .edit_box .top .pop_over2 .wrap li:first-child {
+  font-size: 30rpx;
+}
+.container .index .edit_box .top .pop_over2 .wrap li:nth-child(2) {
+  font-size: 24rpx;
+}
+.container .index .edit_box .top .pop_over2 .wrap li:nth-child(3) {
+  font-size: 18rpx;
+}
+.container .index .edit_box .top .pop_over2 .wrap .selected {
+  color: #ffffff;
+  background: #3495ff;
+}
+.container .index .edit_box .emoji_box {
+  display: none;
+  width: 100%;
+  height: 0rpx;
+}
+.container .index .edit_box .emoji_box .emoji_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 634rpx;
+  margin: 0 auto;
+}
+.container .index .edit_box .emoji_box .emoji_wrap .emoji_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100rpx;
+  height: 100rpx;
+}
+.container .index .edit_box .emoji_box .emoji_wrap .emoji_item .emoji {
+  width: 90rpx;
+  height: 90rpx;
+}
+.container .index .edit_box .extension {
+  display: block;
+  height: 400rpx;
+}
+.container .index .edit_box .add_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 170rpx;
+  margin-bottom: 20rpx;
+}
+.container .index .edit_box .add_box .add_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 586rpx;
+  margin: 0 auto;
+  height: 74rpx;
+  background: #3495ff;
+  border-radius: 30rpx;
+  color: #ffffff;
+  letter-spacing: 2rpx;
+}

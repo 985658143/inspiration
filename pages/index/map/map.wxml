@@ -1,0 +1,91 @@
+<!--pages/store/store.wxml-->
+<view class="main">
+  
+  <view class="nearBy">
+    <view wx:if="{{ hasMap }}">
+      <map
+        id="map"
+        latitude="{{ location.latitude }}"
+        longitude="{{ location.longitude }}"
+        markers="{{ markers }}"
+        bindmarkertap="toRouteDetail"
+        show-location
+        class="store_map"
+        wx:if="{{ isShow }}"
+        animation="{{ animationData }}"
+        show-scale
+        style="height:{{ mapHeight }}rpx; opacity:{{ mapOpacity }};"
+      >
+      </map>
+      <!-- <cover-view class="moveLocation" bindtap="clickControl" wx:if="{{stopBtn}}">
+      <cover-image src="/static/images/map/store/back.png"></cover-image>
+      </cover-view> -->
+    </view>
+    
+    
+    <view class="no-map" wx:if="{{ !hasMap }}">
+      <view class="default_box">
+        <view class="unShow">
+          很抱歉，由于您未同意授权地理位置，因此无法使用门店对应功能
+        </view>
+        <van-button
+            open-type="openSetting"
+            bindopensetting="authLocation"
+            round
+            type="info"
+            color="linear-gradient(to right, #ff672e,#ff4600)"
+            custom-style="margin-right:30rpx">
+            点击授权
+          </van-button>
+      </view>
+      
+    </view>
+  
+    <view class="store_content" wx:if="{{ hasMap }}" >
+      <view class="close" bindtap="{{ stopBtn ? 'hideContent' : 'showContent' }}">
+        <view class="line"></view>
+        <text>{{ switchText }}</text>
+      </view>
+      <view class="store_wrapper {{ stopBtn ? '' : 'stretch' }}">
+        <block wx:for="{{ storeInfo }}" wx:key="index">
+          <view class="box store {{ currentIndex === index ? 'active' : ''}}" data-index="{{ index }}" bindtap="changeStore">
+            <view class="title">
+              <image src="/static/images/map/star.png" mode="widthFix"></image>
+              <text >{{ item.address }}</text>
+            </view>
+            <view class="info">
+              <view class="left_box">
+                <view>
+                  <image class="address" src="/static/images/map/address.png" mode="widthFix"></image>
+                  <text >{{ item.detailed_address }}</text>
+                </view>
+                <view>
+                  <image class="clock" src="/static/images/map/clock.png" mode="widthFix"></image>
+                  <text space="ensp">{{ item.business_hours }}</text>
+                </view>
+              </view>
+              <view class="right_box">
+                <view class="box_wrapper">
+                  <view class="distance">
+                    <view>该门店</view>
+                    <view class="overflow">距离{{ item.distance }}km</view>
+                  </view>
+                  <view class="icon_box">
+                    <image class="phone" src="/static/images/map/phone.png" catchtap="actionCall" data-phone="{{ index }}"></image>
+                    <image class="navigation" src="/static/images/map/navigation.png" catchtap="navigate" data-nav="{{ index }}"></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="btn">
+              <image src="/static/images/map/{{ item.status }}.png" mode="widthFix"></image>
+            </view>
+          </view>
+        </block>
+        <view class="underline">
+          <text>-我也是有底线的-</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -149,7 +149,7 @@ Page({
   // 多选图片框
   checkboxChange(e) {
     let arr = e.detail.value;
-    console.log("checkboxChange", arr)
+    arr = arr.map(el=> parseInt(el))
     this.setData({
       deleteList: arr
     })
@@ -161,12 +161,8 @@ Page({
     wx.showLoading({
       title: "删除中",
       mask: true,
-    });
-    let arr = arrList.filter((el, index) => {
-      if(deleteList.includes(el.id)) {
-        console.log("deleteImg", el)
-      }
-    })
+    }); 
+    let arr = arrList.filter(el => !deleteList.includes(parseInt(el.id)))
     _this.setData({
       arrList: arr
     }, ()=> {

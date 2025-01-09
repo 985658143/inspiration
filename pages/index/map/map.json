@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "l-cover": "/components/l-cover/l-cover"
+  },
+  "navigationBarTitleText": "地图门店组件"
+}

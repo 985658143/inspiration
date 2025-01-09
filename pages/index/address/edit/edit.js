@@ -1,5 +1,5 @@
 const app = getApp();
-import { areaList } from "..//@vant/weapp/area-data/dist/index.cjs";
+import { areaList } from "../../../../miniprogram_npm/@vant/area-data/index";
 Page({
   data: {
     isCover: false, // 防抖

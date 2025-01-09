@@ -10,6 +10,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "richText",
+          "pathName": "pages/index/richText/richText",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "waterfallPhoto",
           "pathName": "pages/ui/waterfallPhoto/waterfallPhoto",
           "query": "",

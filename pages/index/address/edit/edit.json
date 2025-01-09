@@ -1,9 +1,9 @@
 {
   "usingComponents": {
     "l-cover": "/components/l-cover/l-cover",
-    "van-area": "@vant/weapp/area/index",
-    "van-popup": "@vant/weapp/popup/index",
-    "van-switch": "@vant/weapp/switch/index"
+    "van-area": "/miniprogram_npm/@vant/weapp/area/index",
+    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+    "van-switch": "/miniprogram_npm/@vant/weapp/switch/index"
   },
   "navigationBarTitleText": "修改收件地址",
   "navigationBarBackgroundColor": "#f8f8f8"
