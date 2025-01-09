@@ -1,21 +1,9 @@
 //Page Object
-const app = getApp()  
+const app = getApp() 
+import {menuList} from '../../utils/menu' 
 Page({
   data: {
-    menuList: [
-      {
-        id: 1,
-        url: "/pages/frame/frame",
-        title: "蓝牙",
-        open: false,
-      },
-      {
-        id: 2,
-        url: "/pages/index/map/map",
-        title: "gsplat模型预览",
-        open: false,
-      },
-    ]
+    menuList: menuList.function
   },
   //options(Object)
   onLoad: function(options){
