@@ -33,7 +33,7 @@ page {
 .container .intro .intro_text {
   position: relative;
   width: 90%;
-  nmargin: 0 auto;
+  margin: 0 auto;
   font-size: 26rpx;
 }
 .container .list {
