@@ -18,7 +18,7 @@ const formatNumber = (n) => {
   return s[1] ? s : '0' + s
 }
 
-function inArray(arr, key, val) {
+export function inArray(arr, key, val) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i][key] === val) {
       return i

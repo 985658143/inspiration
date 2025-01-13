@@ -15,6 +15,9 @@ export const  PREVIOUS_SONG = '777'         // 上一首
 export const  BACKLIGHT1 = 'bk000'          // 背光1
 export const  BACKLIGHT2 = 'bk050'          // 背光2
 export const  BACKLIGHT3 = 'bk100'          // 背光3
+//-------------------4. 功能 -------------------
+export const UPDATELIST = "update"          // 更新数据列表
+export const SHUTDOWN = "power000"          // 关机
 
 export const blueApi = [
   //------------------ 1. wifi ------------------
@@ -29,10 +32,15 @@ export const blueApi = [
   //   value: 'pasn', // + password
   // },  
   {
-    id: 3,
-    title: '连接wifi', 
-    value: CONNECT_WIFI, 
+    id: 15,
+    title: '更新数据', 
+    value:  UPDATELIST
   },  
+  // {
+  //   id: 3,
+  //   title: '连接wifi', 
+  //   value: CONNECT_WIFI, 
+  // },  
   {
     id: 4,
     title: '断开wifi', 
@@ -90,5 +98,11 @@ export const blueApi = [
     id: 14,
     title: '背光3', 
     value:  BACKLIGHT3
+  },  
+  //-------------------4. 功能 -------------------
+  {
+    id: 16,
+    title: '关机', 
+    value:  SHUTDOWN
   },  
 ]

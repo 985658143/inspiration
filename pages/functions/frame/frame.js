@@ -1,14 +1,13 @@
 //Page Object
-import {blueApi, SET_WIFISSID, SET_WIFIPASSWORD} from '../../../utils/blueApi.js'
-import { isHexadecimal, strToUtf8Bytes, ab2hex, inArray } from '../../../utils/util.js'
 const app = getApp()
-
+import {blueApi, SET_WIFISSID, SET_WIFIPASSWORD, CONNECT_WIFI, UPDATELIST} from '../../../utils/blueApi.js'
+import {isHexadecimal, strToUtf8Bytes, ab2hex, inArray, string2buffer} from '../../../utils/util'
 
 Page({
   data: {
     deviceList: '',
     showLoading: true,
-    showControl: false,
+    showControl: true,
     receiveInfo: "",
     timer: null,
     wifiShow: false,
@@ -310,7 +309,7 @@ Page({
           showControl: true,
           wifiShow: true
         })
-        that.sendInfo(SET_WIFISSID, 1)
+        that.sendInfo(SET_WIFISSID)
         wx.hideLoading()
       }
     })
@@ -338,10 +337,9 @@ Page({
 
   // 指令发送
   instructionClick(e) {
-    const {value, id} = e.currentTarget.dataset;
+    const {value} = e.currentTarget.dataset;
     console.log("instructionClick---value", value)
-    console.log("instructionClick---id", id)
-    this.sendInfo(value, id)
+    this.sendInfo(value)
   },
 
    // 判断wifi密码是否正确
@@ -353,9 +351,11 @@ Page({
       password: wifiPSD, 
       success(res)  {
         console.log("isConnectedWifi",res)
-        that.sendInfo(SET_WIFIPASSWORD, 2)
+        that.sendInfo(SET_WIFIPASSWORD) // 设置wifi密码
         that.setData({
           wifiShow: false
+        }, ()=> {
+          that.sendInfo(CONNECT_WIFI)
         })
       },
       fail(err) {
@@ -384,16 +384,19 @@ Page({
  * 注：用户用此操作之前必须登录
  */
   // 向3D相框发送数据
-  sendInfo(value, type) {
+  sendInfo(value) {
     console.log("-------------------sendInfo-------------------")
     let that = this;
     let userInfo = wx.getStorageSync('userInfo');
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjk5MjksImlzV2VjaGF0Ijp0cnVlLCJqd3RWZXJzaW9uIjoiMS4wIiwibmlja25hbWUiOiJMbGlhbSJ9.z9uJrnDbfE5LywWaQD1aaTb4B0boS1KXI-q-bR5CMQY"
     let {wifiPSD, wifiSSID} = that.data;
     let testText, buffer;
-    if(type == 1) {
+    if(value == SET_WIFISSID) {
       testText = value + wifiSSID
-    }else if(type == 2) {
+    }else if(value == SET_WIFIPASSWORD) {
       testText = value + wifiPSD
+    }else if(value == UPDATELIST){
+      testText = value + token
     }else {
       testText = value;
     }
