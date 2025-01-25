@@ -8,6 +8,7 @@ Page({
     deviceList: '',
     showLoading: true,
     showControl: true,
+    sendInfo: "",
     receiveInfo: "",
     timer: null,
     wifiShow: false,
@@ -15,7 +16,8 @@ Page({
     wifiSSID: "",
     dict: {},
     wifiPSD: "",
-    testText: ""
+    testText: "",
+    version: "v0.0.22"
   },
   onUnload() {
     this.closeBluetooth()
@@ -59,7 +61,7 @@ Page({
   // 判断是否打开gps
   isGps() {
     let that = this
-    wx.getSystemInfo({
+    wx.getSetting({
       success (res) {
         let gps=res.locationEnabled;
         // Android端需要打开gps
@@ -254,7 +256,8 @@ Page({
       serviceId,
       success: (res) => {
         console.log('getBLEDeviceCharacteristics success', res.characteristics)
-        // let cuuid = "0000FFF1-0000-1000-8000-00805F9B34FB"
+        // let suuid = "0000fff1-0000-1000-8000-00805f9b34fb"
+        // let suuid = "0000FFF1-0000-1000-8000-00805F9B34FB"
         let cuuid = "0000FFF2-0000-1000-8000-00805F9B34FB"  // test
         for (let i = 0; i < res.characteristics.length; i++) {
           const item = res.characteristics[i]
@@ -291,10 +294,27 @@ Page({
               state: true,
               success (res) {
                 console.log('notifyBLECharacteristicValueChange success', res.errMsg)
-                wx.onBLECharacteristicValueChange(function(res) {
-                  console.log('1');
-                  console.log(`characteristic ${res.characteristicId} has changed, now is ${res.value}`)
-                  console.log(ab2hex(res.value))
+                // 操作之前先监听，保证第一时间获取数据
+                wx.onBLECharacteristicValueChange((characteristic) => {
+                  const idx = inArray(this.data.chs, 'uuid', characteristic.characteristicId)
+                  const data = {}
+                  if (idx === -1) {
+                    data[`chs[${this.data.chs.length}]`] = {
+                      uuid: characteristic.characteristicId,
+                      value: ab2hex(characteristic.value)
+                    }
+                  } else {
+                    data[`chs[${idx}]`] = {
+                      uuid: characteristic.characteristicId,
+                      value: ab2hex(characteristic.value)
+                    }
+                  }
+                  wx.showToast({
+                    title: '收到从机数据',
+                  })
+                  this.setData({
+                    receiveInfo: data
+                  })
                 })
               }
             })
@@ -305,34 +325,42 @@ Page({
         console.error('getBLEDeviceCharacteristics', res)
       },
       complete() {  
+        wx.getStorage({
+          key: 'wifidata',
+          success: (res)=>{
+            // 如果当前wifi和存储的wifi一致，则免wifi连接
+            let ssid = that.data.wifiSSID;
+            if(ssid !== res.ssid) {
+              that.setData({
+                wifiShow: true
+              })
+            }else {
+              that.setData({
+                wifiSSID: res.ssid,
+                wifiPSD: res.password,
+              },()=> {
+                that.sendInfo(SET_WIFISSID)
+                that.sendInfo(SET_WIFIPASSWORD)
+                that.sendInfo(CONNECT_WIFI)
+              })
+            }
+          },
+          fail: ()=>{
+            that.setData({
+              wifiShow: true
+            },()=> {
+              that.sendInfo(SET_WIFISSID)
+            })
+          },
+        });
         that.setData({  
           showControl: true,
-          wifiShow: true
         })
-        that.sendInfo(SET_WIFISSID)
+      
         wx.hideLoading()
       }
     })
-    // 操作之前先监听，保证第一时间获取数据
-    // wx.onBLECharacteristicValueChange((characteristic) => {
-    //   const idx = inArray(this.data.chs, 'uuid', characteristic.characteristicId)
-    //   const data = {}
-    //   if (idx === -1) {
-    //     data[`chs[${this.data.chs.length}]`] = {
-    //       uuid: characteristic.characteristicId,
-    //       value: ab2hex(characteristic.value)
-    //     }
-    //   } else {
-    //     data[`chs[${idx}]`] = {
-    //       uuid: characteristic.characteristicId,
-    //       value: ab2hex(characteristic.value)
-    //     }
-    //   }
-    //   wx.showToast({
-    //     title: '收到从机数据',
-    //   })
-    //   this.setData(data)
-    // })
+    
   },
 
   // 指令发送
@@ -351,6 +379,13 @@ Page({
       password: wifiPSD, 
       success(res)  {
         console.log("isConnectedWifi",res)
+        wx.setStorage({
+          key: 'wifidata',
+          data: {
+            ssid: wifiSSID,
+            password: wifiPSD
+          },
+        });
         that.sendInfo(SET_WIFIPASSWORD) // 设置wifi密码
         that.setData({
           wifiShow: false
@@ -407,16 +442,16 @@ Page({
     //   wifiSSID
     // }
 
-    if(isHexadecimal(testText)) {
-      // 如果是16进制
-      buffer = new ArrayBuffer(testText.length / 2)
-      let x = new Uint8Array(buffer)
-      for (let i = 0; i < x.length; i++) {
-          x[i] = parseInt(testText.substr(2 * i, 2), 16)
-      }
-    }else {
-        buffer = new Uint8Array(strToUtf8Bytes(testText)).buffer
-    }
+    // if(isHexadecimal(testText)) {
+    //   // 如果是16进制
+    //   buffer = new ArrayBuffer(testText.length / 2)
+    //   let x = new Uint8Array(buffer)
+    //   for (let i = 0; i < x.length; i++) {
+    //       x[i] = parseInt(testText.substr(2 * i, 2), 16)
+    //   }
+    // }else {
+    buffer = new Uint8Array(strToUtf8Bytes(testText)).buffer
+    // }
 
     // const params = JSON.stringify(data);
 
@@ -433,13 +468,13 @@ Page({
       success(e) {
         console.log('writeBLECharacteristicValue: 成功', JSON.stringify(e) )
         that.setData({
-          receiveInfo: testText+ 'ok'
+          sendInfo: testText+ 'ok'
         })
       },
       fail(e) {
         console.log('writeBLECharacteristicValue: 失败')
         that.setData({
-          receiveInfo: testText+ 'fail'
+          sendInfo: testText+ 'fail'
         })
       },
       complete() {

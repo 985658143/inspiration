@@ -10,6 +10,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "bluetooth",
+          "pathName": "pages/functions/frame/frame",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "richText",
           "pathName": "pages/index/richText/richText",
           "query": "",

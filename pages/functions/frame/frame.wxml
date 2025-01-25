@@ -2,7 +2,7 @@
   <view class="search_container">
     <view class="search_bar">
       <view class="search_text">
-        <view class="t1">扫描附近设备</view>
+        <view class="t1">扫描附近设备({{version}})</view>
         <view class="t2" wx:if="{{showLoading}}">持续搜索中<van-loading  size="18px" type="spinner" /></view>
         <view class="t2" wx:else>已发现{{deviceList.length}}个设备</view>
       </view>
@@ -27,7 +27,12 @@
 
   <view class="receiveInfo">
     <view class="">
-      接收到的信息：{{receiveInfo}}
+      发送的信息：{{sendInfo}}
+    </view>
+  </view>
+  <view class="receiveInfo">
+    <view class="">
+      返回的信息：{{receiveInfo}}
     </view>
   </view>
 

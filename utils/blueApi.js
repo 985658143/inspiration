@@ -11,6 +11,10 @@ export const  FAST_FORWARD = 'm733'         // 快进10秒
 export const  BACKWARD = 'm755'             // 后退10秒
 export const  NEXT_SONG = '766'             // 下一首
 export const  PREVIOUS_SONG = '777'         // 上一首
+export const  ADD_VOLUME = 's611'           // 音量加10
+export const  DEE_VOLUME = 's622'           // 音量减10
+export const  VOLUME_SWITCH = 's655'        // 声音开关
+
 //------------------ 3. 灯光 ------------------
 export const  BACKLIGHT1 = 'bk000'          // 背光1
 export const  BACKLIGHT2 = 'bk050'          // 背光2
@@ -18,6 +22,9 @@ export const  BACKLIGHT3 = 'bk100'          // 背光3
 //-------------------4. 功能 -------------------
 export const UPDATELIST = "update"          // 更新数据列表
 export const SHUTDOWN = "power000"          // 关机
+export const RESTRART = "power010"          // 重启
+
+export const PLAY = "d311"          // 下载
 
 export const blueApi = [
   //------------------ 1. wifi ------------------
@@ -31,6 +38,11 @@ export const blueApi = [
   //   title: '设置wifipassword名称', 
   //   value: 'pasn', // + password
   // },  
+  {
+    id: 20,
+    title: '下载', 
+    value:  PLAY
+  },  
   {
     id: 15,
     title: '更新数据', 
@@ -82,27 +94,47 @@ export const blueApi = [
     title: '上一首', 
     value:  PREVIOUS_SONG,
   }, 
+  {
+    id: 12,
+    title: '音量加10', 
+    value:  ADD_VOLUME,
+  },  
+  {
+    id: 13,
+    title: '音量减10', 
+    value:  DEE_VOLUME,
+  }, 
+  {
+    id: 14,
+    title: '声音开关', 
+    value:  VOLUME_SWITCH,
+  }, 
   
 //------------------ 3. 灯光 ------------------
   {
-    id: 12,
+    id: 15,
     title: '背光1', 
     value:  BACKLIGHT1,
   },  
   {
-    id: 13,
+    id: 16,
     title: '背光2', 
     value:  BACKLIGHT2,
   },  
   {
-    id: 14,
+    id: 17,
     title: '背光3', 
     value:  BACKLIGHT3
   },  
   //-------------------4. 功能 -------------------
   {
-    id: 16,
+    id: 18,
     title: '关机', 
     value:  SHUTDOWN
+  },  
+  {
+    id: 19,
+    title: '重启', 
+    value:  RESTRART
   },  
 ]
