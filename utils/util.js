@@ -106,3 +106,48 @@ export function ab2hex(buffer) {
   )
   return hexArr.join('')
 }
+
+export function multiSend(array, prefix, suffix, chunkSize = 14) {  
+
+    // 结果数组  
+    const resultArray = [];  
+
+    // 拼接字符串  
+    let combined = prefix + array;  
+
+    // 判断拼接后的字符串长度  
+    if (combined.length > 14) {  
+        // 插入 0 到 14 的部分  
+        resultArray.push(combined.slice(0, 18)); // 插入前14个字符  
+        
+        // 判断是否有超出部分  
+        let excess = combined.slice(18);  
+        console.log("multiSend----excess: ", excess);
+        if(!excess) {
+          resultArray.push(prefix+suffix);
+        }
+        let totalLength = combined.length;  
+
+        // 处理超过18的部分按块进行拼接  
+        let start = 14;  
+        while (start < totalLength) {  
+            // 获取下一块超出部分  
+            let excessChunk = excess.slice(0, chunkSize);  
+            if (excessChunk.length > 0) {  
+                // 插入当前块加上后缀  
+                if (start + chunkSize >= totalLength) {  
+                    resultArray.push(prefix + excessChunk + suffix); // 最后一块加上后缀  
+                } else {  
+                    resultArray.push(prefix + excessChunk); // 普通插入  
+                }  
+            }  
+            excess = excess.slice(chunkSize); // 更新超出部分  
+            start += chunkSize; // 移动到下一个块  
+        }  
+    } else {  
+        // 如果长度小于等于14，直接插入  
+        resultArray.push(combined + suffix); // 直接插入并加上后缀  
+    }  
+
+    return resultArray;  
+}  

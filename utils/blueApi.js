@@ -1,16 +1,16 @@
 //------------------ 1. wifi ------------------
-export const  SET_WIFISSID = 'ssidn'        // + wifiname
-export const  SET_WIFIPASSWORD = 'pasn'     // + password
+export const  SET_WIFISSID = '==sd'        // + wifiname
+export const  SET_WIFIPASSWORD = '==ee'     // + password
 export const  CONNECT_WIFI = 'wifi611'      // 连接wifi
 export const  DISCONNECT_WIFI = 'wifi622'   // 断开wifi
 export const  CLEAR_WIFI = 'wifi655'        // 清除wifi记忆
 //------------------ 2. 音频 ------------------
-export const  STOP_MP4 = 'm711'             // 暂停播放MP4
-export const  PLAY_MP4 = 'm722'             // 继续播放MP4
+export const  STOP_MP4 = 'm711'             // 暂停视频
+export const  PLAY_MP4 = 'm722'             // 播放视频
 export const  FAST_FORWARD = 'm733'         // 快进10秒
 export const  BACKWARD = 'm755'             // 后退10秒
-export const  NEXT_SONG = '766'             // 下一首
-export const  PREVIOUS_SONG = '777'         // 上一首
+export const  NEXT_SONG = 'm766'             // 下一首
+export const  PREVIOUS_SONG = 'm777'         // 上一首
 export const  ADD_VOLUME = 's611'           // 音量加10
 export const  DEE_VOLUME = 's622'           // 音量减10
 export const  VOLUME_SWITCH = 's655'        // 声音开关
@@ -24,7 +24,10 @@ export const UPDATELIST = "update"          // 更新数据列表
 export const SHUTDOWN = "power000"          // 关机
 export const RESTRART = "power010"          // 重启
 
-export const PLAY = "d311"          // 下载
+export const PLAY = "d311"                  // 发送token
+export const DOWNLOAD = "dd001"             // 下载数据
+export const DELETEFILE = "dd019"           // 删除下载数据
+export const PLAYDATA = "dd010"             // 播放下载数据
 
 export const blueApi = [
   //------------------ 1. wifi ------------------
@@ -40,19 +43,34 @@ export const blueApi = [
   // },  
   {
     id: 20,
-    title: '下载', 
+    title: '请求数据', 
     value:  PLAY
+  },  
+  {
+    id: 21,
+    title: '下载数据', 
+    value:  DOWNLOAD
+  },  
+  {
+    id: 22,
+    title: '删除数据', 
+    value:  DELETEFILE
   },  
   {
     id: 15,
     title: '更新数据', 
     value:  UPDATELIST
   },  
-  // {
-  //   id: 3,
-  //   title: '连接wifi', 
-  //   value: CONNECT_WIFI, 
-  // },  
+  {
+    id: 23,
+    title: '播放数据', 
+    value:  PLAYDATA
+  },  
+  {
+    id: 3,
+    title: '连接wifi', 
+    value: SET_WIFISSID, 
+  },  
   {
     id: 4,
     title: '断开wifi', 
@@ -66,12 +84,12 @@ export const blueApi = [
 //------------------ 2. 音频 ------------------
   {
     id: 6,
-    title: '暂停播放MP4', 
+    title: '暂停视频', 
     value:  STOP_MP4,
   },  
   {
     id: 7,
-    title: '继续播放MP4', 
+    title: '播放视频', 
     value:  PLAY_MP4,
   },  
   {

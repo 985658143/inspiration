@@ -25,6 +25,11 @@
     </view>
   </view>
 
+  <!-- <view class="receiveInfo">
+    <view class="">
+     test信息：{{testInfo}}
+    </view>
+  </view> -->
   <view class="receiveInfo">
     <view class="">
       发送的信息：{{sendInfo}}
@@ -63,6 +68,7 @@
       label="密码"
       placeholder="请输入wifi密码"
       required
+      :formatter="removeSpaces"  
       border="{{ false }}"
     />
     <view class="btn_wrap">
