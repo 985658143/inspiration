@@ -17,15 +17,7 @@ Page({
     dict: {},
     wifiPSD: "",
     testText: "",
-    testInfo: "",
-    version: "v0.0.30"
-  },
-  getTest() {
-    let data = multiSend("01234567891", "==sd", "==ee")
-    this.setData({
-      testInfo: data
-    })
-    console.log("sendInfo---data", data)   
+    version: "v0.0.31"
   },
   onUnload() {
     this.closeBluetooth()
@@ -33,7 +25,6 @@ Page({
   //options(Object)
   onLoad: function(options){
     let that = this
-    // that.getTest()
     
     that.setData({
       dict: blueApi
