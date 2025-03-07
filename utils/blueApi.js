@@ -5,11 +5,15 @@ export const  CONNECT_WIFI = 'wifi611'      // 连接wifi
 export const  DISCONNECT_WIFI = 'wifi622'   // 断开wifi
 export const  CLEAR_WIFI = 'wifi655'        // 清除wifi记忆
 //------------------ 2. 音频 ------------------
-export const  STOP_MP4 = 'm711'             // 暂停视频
-export const  PLAY_MP4 = 'm722'             // 播放视频
-export const  FAST_FORWARD = 'm733'         // 快进10秒
-export const  BACKWARD = 'm755'             // 后退10秒
-export const  NEXT_SONG = 'm766'             // 下一首
+export const  PLAY_VIDEO = 'm722'             // 播放视频
+export const  STOP_VIDEO = 'm711'             // 暂停视频
+export const  PLAY_MP3 = 'sm011'             // 播放音频
+export const  STOP_MP3 = 'sm022'             // 暂停音频
+export const  PLAY_IMG = 'si011'             // 播放图片
+export const  STOP_IMG = 'si022'             // 暂停图片
+export const  FAST_FORWARD = 'm777'         // 快进10秒
+export const  BACKWARD = 'm788'             // 后退10秒
+export const  NEXT_SONG = 'm799'             // 下一首
 export const  PREVIOUS_SONG = 'm777'         // 上一首
 export const  ADD_VOLUME = 's611'           // 音量加10
 export const  DEE_VOLUME = 's622'           // 音量减10
@@ -85,73 +89,93 @@ export const blueApi = [
   {
     id: 6,
     title: '暂停视频', 
-    value:  STOP_MP4,
+    value:  STOP_VIDEO,
   },  
   {
     id: 7,
     title: '播放视频', 
-    value:  PLAY_MP4,
+    value:  PLAY_VIDEO,
   },  
   {
     id: 8,
+    title: '暂停图片', 
+    value:  STOP_IMG,
+  },  
+  {
+    id: 9,
+    title: '播放图片', 
+    value:  PLAY_IMG,
+  },  
+  {
+    id: 10,
+    title: '暂停音频', 
+    value:  STOP_MP3,
+  },  
+  {
+    id: 11,
+    title: '播放音频', 
+    value:  PLAY_MP3,
+  },  
+  {
+    id: 12,
     title: '快进10秒', 
     value:  FAST_FORWARD, 
   },  
   {
-    id: 9,
+    id: 13,
     title: '后退10秒', 
     value:  BACKWARD,
   },  
   {
-    id: 10,
+    id: 14,
     title: '下一首', 
     value:  NEXT_SONG,
   },  
   {
-    id: 11,
+    id: 15,
     title: '上一首', 
     value:  PREVIOUS_SONG,
   }, 
   {
-    id: 12,
+    id: 16,
     title: '音量加10', 
     value:  ADD_VOLUME,
   },  
   {
-    id: 13,
+    id: 17,
     title: '音量减10', 
     value:  DEE_VOLUME,
   }, 
   {
-    id: 14,
+    id: 18,
     title: '声音开关', 
     value:  VOLUME_SWITCH,
   }, 
   
 //------------------ 3. 灯光 ------------------
   {
-    id: 15,
+    id: 19,
     title: '背光1', 
     value:  BACKLIGHT1,
   },  
   {
-    id: 16,
+    id: 20,
     title: '背光2', 
     value:  BACKLIGHT2,
   },  
   {
-    id: 17,
+    id: 21,
     title: '背光3', 
     value:  BACKLIGHT3
   },  
   //-------------------4. 功能 -------------------
   {
-    id: 18,
+    id: 22,
     title: '关机', 
     value:  SHUTDOWN
   },  
   {
-    id: 19,
+    id: 23,
     title: '重启', 
     value:  RESTRART
   },  
