@@ -1,11 +1,5 @@
 {
-  "appid": "wx8c917f53177b1ff3",
   "compileType": "miniprogram",
-  "libVersion": "3.7.0",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
   "setting": {
     "coverView": true,
     "es6": true,
@@ -25,5 +19,10 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
+  },
+  "appid": "wx8c917f53177b1ff3",
+  "packOptions": {
+    "ignore": [],
+    "include": []
   }
 }

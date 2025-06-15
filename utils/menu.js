@@ -8,8 +8,14 @@ export const menuList = {
     },
     {
       id: 2,
-      url: "/pages/index/map/map",
+      url: "/pages/functions/gsplat/gsplat",
       title: "gsplat模型预览",
+      open: false,
+    },
+    {
+      id: 3,
+      url: "/pages/functions/gsplat/gsplat",
+      title: "xrFrame",
       open: false,
     },
   ],
